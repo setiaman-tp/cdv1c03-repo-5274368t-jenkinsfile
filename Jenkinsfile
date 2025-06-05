@@ -9,6 +9,8 @@ pipeline {
         stage("ST2-5274368T") {
             steps {
                 echo "To create container"
+                docker commit 17de01d9cb08  server1-5274368t
+                docker run -d -p 32700:80 server1-5274368t
                 echo "ST2-5274368T: Server1 is successfully created"
             }
         }
