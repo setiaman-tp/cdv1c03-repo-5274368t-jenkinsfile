@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo "To create container"
                 script {
+                    sh 'docker ps -a'                    
                     sh 'docker commit 17de01d9cb08 server1-5274368t'
                     sh 'docker run -d -p 32700:80 server1-5274368t'
                 }
